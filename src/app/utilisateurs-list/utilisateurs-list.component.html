@@ -1,3 +1,4 @@
+<p-toast></p-toast>
 <div class="main-content">
     <div class="d-flex">
     <div class="spinner-container" *ngIf="dataSource.loading$ | async">
@@ -44,7 +45,17 @@
             <mat-cell class="description-cell"
                       *matCellDef="let utiliateur">{{utiliateur?.address}}</mat-cell>
         </ng-container>
-
+        <ng-container matColumnDef="options">
+            <mat-header-cell *matHeaderCellDef>Options</mat-header-cell>
+            <mat-cell class="description-cell"
+                      *matCellDef="let utiliateur">
+                <div class="card-header card-header-success card-header-icon">
+                    <div class="card-icon">
+                        <i class="material-icons"><a (click)="delete(utiliateur.userId)">delete</a></i>
+                    </div>
+                </div>
+            </mat-cell>
+        </ng-container>
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
         <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
     </mat-table>

@@ -1,12 +1,7 @@
 import {Router} from '@angular/router';
 import {CategorieService} from 'app/shared/service/categorie.service';
-import {UtilisateurService} from '../shared/service/utilisateur.service';
-import {Formateur} from './../shared/model/formateur.model';
-import {Participant} from './../shared/model/participant.model';
-import {ParticipantService} from './../shared/service/participant.service';
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {PrimeNGConfig} from 'primeng/api';
 import {MessageService} from 'primeng/api';
 
 @Component({

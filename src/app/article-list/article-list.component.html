@@ -1,16 +1,17 @@
+<p-toast></p-toast>
 <div class="main-content">
 
     <div class="d-flex">
-    <div class="spinner-container" *ngIf="dataSource.loading$ | async">
-        <mat-spinner></mat-spinner>
-    </div>
-    <div class="ml-auto p-2">
-        <button type="button" class="btn btn-danger rounded-circle" [routerLink]="'/articles/add'">
+        <div class="spinner-container" *ngIf="dataSource.loading$ | async">
+            <mat-spinner></mat-spinner>
+        </div>
+        <div class="ml-auto p-2">
+            <button type="button" class="btn btn-danger rounded-circle" [routerLink]="'/articles/add'">
                 <span class="material-icons">
                     add_circle
                     </span>
-        </button>
-    </div>
+            </button>
+        </div>
     </div>
     <mat-table class="lessons-table mat-elevation-z8" [dataSource]="dataSource">
         <ng-container matColumnDef="id">
@@ -32,6 +33,22 @@
             <mat-header-cell *matHeaderCellDef>nbstock</mat-header-cell>
             <mat-cell class="description-cell"
                       *matCellDef="let article">{{article?.nbstock}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="categorie">
+            <mat-header-cell *matHeaderCellDef>categorie</mat-header-cell>
+            <mat-cell class="description-cell"
+                      *matCellDef="let article">{{article?.categorie?.name}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="options">
+            <mat-header-cell *matHeaderCellDef>Options</mat-header-cell>
+            <mat-cell class="description-cell"
+                      *matCellDef="let article">
+                <div class="card-header card-header-success card-header-icon">
+                    <div class="card-icon">
+                        <i class="material-icons"><a (click)="delete(article.articleId)">delete</a></i>
+                    </div>
+                </div>
+            </mat-cell>
         </ng-container>
 
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

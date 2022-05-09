@@ -10,7 +10,7 @@ export class CategorieDatasource implements DataSource<Categorie> {
 
     public loading$ = this.loadingSubject.asObservable();
 
-    constructor(private categorieObservable: Observable<Categorie>) {
+    constructor(private categorieObservable: Observable<Categorie[]>) {
     }
 
     connect(collectionViewer: CollectionViewer): Observable<Categorie[]> {

@@ -1,4 +1,4 @@
-export class utilisateur {
+export class Utilisateur {
 
     userId: number;
     cin: string;

@@ -17,6 +17,7 @@ import {CategorieListComponent} from '../../categorie-list/categorie-list.compon
 import {UtilisateursListComponent} from 'app/utilisateurs-list/utilisateurs-list.component';
 import {AddCategorieComponent} from 'app/add-categorie/add-categorie.component';
 import {CalendarModule} from 'primeng/calendar';
+import {DropdownModule} from 'primeng/dropdown';
 import {PickListModule} from 'primeng/picklist';
 import {ToastModule} from 'primeng/toast';
 import {AddUtilisateurComponent} from 'app/add-utilisateur/add-utilisateur.component';
@@ -40,6 +41,7 @@ import {ArticleListComponent} from '../../article-list/article-list.component';
         MatIconModule,
         CalendarModule,
         PickListModule,
+        DropdownModule,
         ToastModule
     ],
     declarations: [

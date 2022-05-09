@@ -1,7 +1,6 @@
 import {Router} from '@angular/router';
 import {CategorieService} from 'app/shared/service/categorie.service';
 import {UtilisateurService} from '../shared/service/utilisateur.service';
-import {ParticipantService} from '../shared/service/participant.service';
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {PrimeNGConfig} from 'primeng/api';
@@ -17,10 +16,10 @@ export class AddUtilisateurComponent implements OnInit {
 
     participantForm = new FormGroup({
             dateN: new FormControl('', [Validators.required]),
-            firstName: new FormControl('', [Validators.required]),
-            lastName: new FormControl('', [Validators.required]),
-            address: new FormControl('', [Validators.required]),
-            tel: new FormControl('', [Validators.required]),
+        firstName: new FormControl('', [Validators.required]),
+        lastName: new FormControl('', [Validators.required]),
+        address: new FormControl('', [Validators.required]),
+        tel: new FormControl('', [Validators.required]),
             cin: new FormControl('', [Validators.required]),
         }
     );

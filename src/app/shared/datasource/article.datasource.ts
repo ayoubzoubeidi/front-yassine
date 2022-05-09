@@ -22,7 +22,7 @@ export class ArticleDatasource implements DataSource<Article> {
         this.loadingSubject.complete();
     }
 
-    loadFormations() {
+    loadArticles() {
         this.loadingSubject.next(true);
         this.formationService.getArticles().pipe(
             catchError(() => of([])),
