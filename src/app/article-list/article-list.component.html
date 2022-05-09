@@ -1,0 +1,40 @@
+<div class="main-content">
+
+    <div class="d-flex">
+    <div class="spinner-container" *ngIf="dataSource.loading$ | async">
+        <mat-spinner></mat-spinner>
+    </div>
+    <div class="ml-auto p-2">
+        <button type="button" class="btn btn-danger rounded-circle" [routerLink]="'/articles/add'">
+                <span class="material-icons">
+                    add_circle
+                    </span>
+        </button>
+    </div>
+    </div>
+    <mat-table class="lessons-table mat-elevation-z8" [dataSource]="dataSource">
+        <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>id</mat-header-cell>
+            <mat-cell *matCellDef="let article">{{article?.articleId}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="nom">
+            <mat-header-cell *matHeaderCellDef>Nom</mat-header-cell>
+            <mat-cell class="description-cell"
+                      *matCellDef="let article">{{article?.name}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="prix">
+            <mat-header-cell *matHeaderCellDef>Prix</mat-header-cell>
+            <mat-cell class="description-cell"
+                      *matCellDef="let article">{{article?.prix}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="nbstock">
+            <mat-header-cell *matHeaderCellDef>nbstock</mat-header-cell>
+            <mat-cell class="description-cell"
+                      *matCellDef="let article">{{article?.nbstock}}</mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+</div>

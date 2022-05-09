@@ -1,0 +1,18 @@
+<p-toast></p-toast>
+
+<div class="main-content  bg-white">
+    <div class="container">
+        <div class="card shadow mb-4 text-center">
+            <h5 class="card-title">Ajouter Categorie</h5>
+            <div class="card-body">
+                <form [formGroup]="categorieFrom" (ngSubmit)="onSubmit()">
+                    <div class="form-group row">
+                        <label for="name">Categorie Name</label>
+                        <input type="text" id="name" formControlName="name" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

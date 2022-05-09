@@ -1,0 +1,51 @@
+<div class="main-content">
+    <div class="d-flex">
+    <div class="spinner-container" *ngIf="dataSource.loading$ | async">
+        <mat-spinner></mat-spinner>
+    </div>
+    <div class="ml-auto p-2">
+        <button type="button" class="btn btn-danger rounded-circle" [routerLink]="'utilisateurs/add'">
+            <span class="material-icons">
+                add_circle
+                </span>
+        </button>
+    </div>
+    </div>
+    <mat-table class="lessons-table mat-elevation-z8" [dataSource]="dataSource">
+        <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>id</mat-header-cell>
+            <mat-cell *matCellDef="let utiliateur">{{utiliateur.userId}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="cin">
+            <mat-header-cell *matHeaderCellDef>CIN</mat-header-cell>
+            <mat-cell class="description-cell"
+                      *matCellDef="let utiliateur">{{utiliateur?.cin}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="firstName">
+            <mat-header-cell *matHeaderCellDef>First Name</mat-header-cell>
+            <mat-cell class="description-cell"
+                      *matCellDef="let utiliateur">{{utiliateur?.firstName}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="lastName">
+            <mat-header-cell *matHeaderCellDef>Last Name</mat-header-cell>
+            <mat-cell class="description-cell"
+                      *matCellDef="let utiliateur">{{utiliateur?.lastName}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="tel">
+            <mat-header-cell *matHeaderCellDef>Tel</mat-header-cell>
+            <mat-cell class="description-cell"
+                      *matCellDef="let utiliateur">{{utiliateur?.tel}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="address">
+            <mat-header-cell *matHeaderCellDef>Address</mat-header-cell>
+            <mat-cell class="description-cell"
+                      *matCellDef="let utiliateur">{{utiliateur?.address}}</mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+</div>
